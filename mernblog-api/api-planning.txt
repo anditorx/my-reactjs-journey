@@ -1,0 +1,82 @@
+Standar API
+
+{root.api}/{version}/{grouping}/{endpoint}
+sample:
+http://mern-api.aleankas.com/v1/auth/login
+
+Standar Status Response
+200 - OK -> Call API Success
+201 - CREATED -> Post Success
+400 - BAD REQUEST -> Error on client side (Input nya yg salah)
+401 - UNAUTHORIZED -> User not authorized to the REQUEST
+403 - FORBIDEN -> User not allowed to access.
+406 - NOT FOUND -> REQUEST endpoint not found.
+500 - INTERNAL SERVER ERROR -> Error on Server Side
+502 - BAD GATEWAY -> Invalid response from another request
+
+
+Authentication
+	-Login {root.api}/{version}/auth/login
+	
+	request : {
+
+	}
+
+	-Register {root.api}/{version}/auth/register
+
+	request : {
+		"name" : "Test,
+		"email" : "test@mail.com",
+		"password" : "123456",
+	}
+
+	response : {
+		"message_title" : "Success",
+		"message" : "Register Success",
+		"data" : {
+			"id" : 1,
+			"name" : "Test,
+			"email" : "test@mail.com",
+			"password" : "123456",
+		}
+	}
+
+	error-response : {
+		400 -> input yang anda masukkan tidak valid
+	}
+
+BLOG
+	-Create Blog Post {root.api}/{version}/blog/post
+
+		request : {
+			"title" : "Title Blog",
+			"image" : "image.png",
+			"body" : "Lorem ipsum is simply dummy text of the printing",
+		}
+
+		response : {
+			"message_title" : "Success",
+			"message" : "Create Blog Success",
+			"data" : {
+				"post_id" : 1,
+				"title" : "Title Blog",
+				"image" : "image.png",
+				"body" : "Lorem ipsum is simply dummy text of the printing",
+				"created_at" : "12/06/2020",
+				"author" : {
+					"uid" : 1,
+					"name" : "Testing"
+				}
+			}
+		}
+		
+		error-response : {
+			400 -> input yang anda masukkan tidak valid
+		}
+		
+	-Get Blog Post
+	-Update Blog Post
+	-Delete Blog Post
+
+
+
