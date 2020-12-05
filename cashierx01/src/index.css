@@ -8,6 +8,10 @@ body {
 .navbar {
   background-color: darkcyan;
 }
+.category-active {
+  background-color: darkcyan;
+  color: white;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",

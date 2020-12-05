@@ -17,7 +17,7 @@ const Menus = ({ menu }) => {
         />
         <Card.Body>
           <Card.Title>
-            {menu.nama} [{menu.kode}]
+            {menu.nama} <strong>[{menu.kode}]</strong>
           </Card.Title>
           <Card.Text>Rp. {numberFormatWithCommas(menu.harga)}</Card.Text>
           <Button variant="primary">Go somewhere</Button>
